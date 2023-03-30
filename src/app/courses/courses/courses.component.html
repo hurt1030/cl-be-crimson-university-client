@@ -1,0 +1,9 @@
+<div style="border: 1px solid black; margin-bottom: 5px;" *ngFor="let course of courses">
+  <p><strong>Title: </strong>{{course.title}}</p>
+  <p><strong>Description: </strong> {{course.description}}</p>
+  <p><strong>Professor: </strong>{{course.professor.first_name}}</p>
+  <strong>Students: </strong>
+  <ul>
+    <li *ngFor="let student of course.students">{{student.first_name + ' ' + student.last_name}}</li>
+  </ul>
+</div>

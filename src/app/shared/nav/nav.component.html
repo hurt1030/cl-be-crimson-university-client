@@ -10,10 +10,16 @@
           <a class="nav-link active" aria-current="page">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/signup">Sign Up</a>
+          <a class="nav-link" routerLink="/signup" *ngIf="!currentUser">Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
+          <a class="nav-link" routerLink="/login" *ngIf="!currentUser">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="currentUser" (click)="logout()">Log Out</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="currentUser" routerLink="/courses">Courses</a>
         </li>
       </ul>
     </div>
